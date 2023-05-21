@@ -6,6 +6,7 @@ contract("NFT_Market", (accounts) => {
 		const instance = await NFT_Market.deployed();
 		await instance.add_nft("CC001", "CryptoCat", accounts[0], 1, "Test NFT CryptoCat", "1");
 		const nft = await instance.get_nft("CC001");
+		console.log(nft)
 		assert.equal(nft.id, "CC001", "Couldn't fetch newly added NFT");
 	});
 
